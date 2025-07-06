@@ -12,7 +12,8 @@ export const initialStore=()=>{
         title: "Do my homework",
         background: null,
       }
-    ]
+    ],
+    people: []
   }
 }
 
@@ -26,6 +27,13 @@ export default function storeReducer(store, action = {}) {
         ...store,
         todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
       };
+
+      case 'setPeople':
+      return{
+        ...store,
+        people: action.payload
+      }
+
     default:
       throw Error('Unknown action.');
   }    
