@@ -12,7 +12,7 @@ export const Home = () => {
 	useEffect(() => {
 		getPeople(dispatch)
 	}, []);
-
+	console.log(store.people)
 	return (
 
 		<>

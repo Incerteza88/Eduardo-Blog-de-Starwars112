@@ -17,14 +17,13 @@ export const Character = () => {
             .catch(err => console.error(err))
     }, [uid]);
 
-
-
     return (
-
         <>
             <h1>Detalles del personaje</h1>
             <h2>{character.name} </h2>
             
+            <p>Birth</p>
+            <p>Gender: {character.gender}</p>
             <p>Eye color: {character.eye_color}</p>
         </>
 

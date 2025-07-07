@@ -9,6 +9,5 @@ export const getPeople = (dispatch) => {
             dispatch({type: 'setPeople', payload: data.results})
         })
         .catch(err => console.error(err))
-
 }
 
