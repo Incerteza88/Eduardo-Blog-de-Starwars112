@@ -1,8 +1,9 @@
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import Cards from "../components/Cards.jsx";
+import PlanetsStarwars from "../components/PlanetsStarwars.jsx";
 import { useEffect } from "react";
-import { getPeople } from "../services/api_services.js";
+import { getPeople, getPlanets } from "../services/api_services.js";
 
 
 export const Home = () => {
@@ -11,8 +12,9 @@ export const Home = () => {
 
 	useEffect(() => {
 		getPeople(dispatch)
+		getPlanets(dispatch)
 	}, []);
-	console.log(store.people)
+
 	return (
 
 		<>
@@ -23,7 +25,16 @@ export const Home = () => {
 						<Cards key={character.uid} character={character} />
 					)
 				})}
+
 			</div>
+
+			<div className="d-flex overflow-x-scroll gap-2">
+				{store.planets.map(planets => {
+					return (
+						<PlanetsStarwars key={planets.uid} planets={planets} />
+					)
+				})}
+			</div >
 		</>
 	);
 }; 

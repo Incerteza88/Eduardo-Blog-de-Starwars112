@@ -13,11 +13,11 @@ export const Navbar = () => {
 				</Link>
 				<div className="ml-auto">
 
-					<div class="btn-group">
+					<div className="btn-group">
 						<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 							{store.favorites.length > 0 ? `favoritos: ${store.favorites.length}` : 'Favoritos 0'}
 						</button>
-						<ul class="dropdown-menu dropdown-menu-end">
+						<ul className="dropdown-menu dropdown-menu-end">
 							{
 								store.favorites.length > 0 ?
 									store.favorites.map(favorite => {
@@ -25,7 +25,7 @@ export const Navbar = () => {
 											<li><p class="dropdown-item">{favorite} {' '} <i onClick={() => dispatch({type: 'handleFavorites', payload: favorite})} class="fa-solid fa-trash"></i> </p></li>
 										)
 									}) :
-									<li><p class="dropdown-item">Agrega un favorito</p></li>
+									<li><p className="dropdown-item">Agrega un favorito</p></li>
 							}
 
 						</ul>

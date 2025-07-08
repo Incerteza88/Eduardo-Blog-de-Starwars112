@@ -3,33 +3,33 @@ import { Link } from 'react-router-dom';
 import useGlobalReducer from '../hooks/useGlobalReducer';
 
 
-const Cards = ({ character }) => {
+const PlanetsStarwars = ({ planets }) => {
     const { store, dispatch } = useGlobalReducer()
-
-    // En la className del corazon se hace un ternario, si es verdadero se le pone la clase que le cambie el color a rojo
-    // Si es falso, no se pone nada, se ponen ""
 
     return (
 
         <div className='col-5 mx-4 my-4'>
 
             <div className="card">
-                <img src={`https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/characters/${character.uid}.jpg`}
+                <img src={`https://raw.githubusercontent.com/tbone849/star-wars-guide/refs/heads/master/build/assets/img/planets/${planets.uid}.jpg`}
                     className="card-img-top"
                     onError={(e) => {
-                        e.target.onerror = null; 
+                        e.target.onerror = null;
                         e.target.src = 'https://cdn.dribbble.com/userupload/41776701/file/still-64503eb9e5390adf7fecb8ec4af9f637.gif?resize=400x0';
                     }} />
                 <div className="card-body">
-                    <h4 className="card-title">{character.name}</h4>
+                    <h4 className="card-title">{planets.name}</h4>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Link to={`/character/${character.uid}`}>
+                        <Link to={`/character/${planets.uid}`}>
                             <button className="btn btn-primary">Learn more!</button>
                         </Link>
 
-                        <i onClick={() => dispatch({ type: 'handleFavorites', payload: character.name })} className="fa-regular fa-heart " style={{ fontSize: '40px' }}></i>
+                        <i onClick={() => dispatch({ type: 'handleFavorites', payload: planets.name })} className="fa-regular fa-heart " style={{ fontSize: '40px' }}></i>
                     </div>
+
+
+
 
                 </div>
             </div>
@@ -38,4 +38,4 @@ const Cards = ({ character }) => {
     )
 }
 
-export default Cards;
+export default PlanetsStarwars;
