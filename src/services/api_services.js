@@ -21,3 +21,14 @@ export const getPlanets = (dispatch) => {
         })
         .catch(err => console.error(err))
 }
+
+export const getVehicles = (dispatch) => {
+
+    fetch("https://www.swapi.tech/api/vehicles/")
+        .then(res => res.json())
+        .then(data => {
+            console.log('vehicles:', data)
+            dispatch({type: 'setVehicles', payload: data.results})
+        })
+        .catch(err => console.error(err))
+}
