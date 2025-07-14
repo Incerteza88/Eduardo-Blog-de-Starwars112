@@ -1,0 +1,278 @@
+:root {
+  --starwars-yellow: #FFE81F;
+  --starwars-yellow-dark: #FFD700;
+  --starwars-black: #000000;
+  --starwars-dark-gray: #1a1a1a;
+  --starwars-light-yellow: #FFA500;
+}
+
+/* fuente base */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--starwars-black);
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--starwars-yellow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px var(--starwars-yellow),
+    0 0 10px var(--starwars-yellow),
+    0 0 20px var(--starwars-yellow-dark),
+    0 0 30px var(--starwars-light-yellow);
+}
+
+/* Scroll  */
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: #111; /* fondo galáctico */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #fff700, #ffe81f, #ffcc00);
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px #ffe81f,
+    0 0 20px #ffe81f,
+    0 0 30px #ffe81f,
+    inset 0 0 10px #ffe81f;
+  border: 1px solid var(--starwars-black);
+  transition: box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow:
+    0 0 20px #fff700,
+    0 0 35px #ffe81f,
+    0 0 50px #ffe81f,
+    inset 0 0 20px #ffe81f;
+  background: linear-gradient(90deg, #fff700, #ffd000, #ffa500);
+}
+
+/* Textos Star Wars */
+h1, h2, h3, .navbar-brand, .starwars-title, .starwars-subtitle {
+  color: var(--starwars-yellow);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px black;
+  font-family: inherit; /* ya está en body */
+}
+
+/* Logo con animación */
+.starwars-logo {
+  font-size: 2.8rem;
+  color: var(--starwars-yellow);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 5px var(--starwars-yellow),
+    0 0 10px var(--starwars-yellow-dark),
+    0 0 20px var(--starwars-light-yellow);
+  animation: starwars-glow 2s infinite alternate;
+  transition: transform 0.3s ease;
+}
+
+.starwars-logo:hover {
+  transform: scale(1.05);
+}
+
+@keyframes starwars-glow {
+  from {
+    text-shadow:
+      0 0 5px var(--starwars-yellow),
+      0 0 10px var(--starwars-yellow-dark),
+      0 0 15px var(--starwars-light-yellow);
+  }
+  to {
+    text-shadow:
+      0 0 10px var(--starwars-yellow),
+      0 0 20px var(--starwars-yellow-dark),
+      0 0 30px var(--starwars-light-yellow);
+  }
+}
+
+/* Texto con estilo Star Wars */
+.starwars-font {
+  color: var(--starwars-yellow);
+  text-shadow: 1px 1px 4px #000;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Tarjetas */
+.card {
+  background-color: var(--starwars-black);
+  border: 1px solid var(--starwars-yellow);
+  color: white;
+  box-shadow: 0 0 10px var(--starwars-yellow);
+}
+
+/* Navbar */
+.starwars-navbar {
+  background: radial-gradient(circle, var(--starwars-black) 70%, var(--starwars-dark-gray) 100%);
+  border-bottom: 2px solid var(--starwars-yellow);
+  box-shadow: 0 0 10px var(--starwars-yellow);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--starwars-yellow) !important;
+  text-shadow: 0 0 5px black;
+}
+
+/* Botones warning */
+.btn-warning {
+  background-color: var(--starwars-yellow);
+  color: var(--starwars-black);
+  font-weight: bold;
+  border: 1px solid var(--starwars-yellow-dark);
+  box-shadow: 0 0 8px var(--starwars-yellow);
+}
+
+/* Dropdown */
+.starwars-dropdown {
+  background: radial-gradient(circle, var(--starwars-black) 60%, #1c1c1c 100%);
+  border: 1px solid var(--starwars-yellow);
+  color: var(--starwars-yellow);
+  box-shadow: 0 0 10px var(--starwars-yellow);
+  padding: 0.5rem;
+  min-width: 200px;
+}
+
+.starwars-dropdown .dropdown-item {
+  color: var(--starwars-yellow);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.starwars-dropdown .dropdown-item:hover {
+  background-color: #222;
+  color: #FFFFFF;
+  box-shadow: inset 0 0 5px var(--starwars-yellow);
+}
+
+/* Textos y descripciones */
+.starwars-description {
+  color: #ccc;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.starwars-info p {
+  font-size: 1rem;
+  color: var(--starwars-yellow);
+  text-shadow: 0 0 5px var(--starwars-yellow-dark);
+}
+
+/* Detalles personajes */
+.character-image, .planet-image {
+  width: 350px;
+  border: 2px solid var(--starwars-yellow);
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--starwars-yellow);
+}
+
+.character-details, .planet-details, .vehicle-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Detalles vehículos */
+.vehicle-image {
+  width: 100%;
+  max-width: 500px; /* mayor tamaño */
+  border: 2px solid var(--starwars-yellow);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--starwars-yellow);
+  transition: transform 0.3s ease-in-out;
+}
+
+.vehicle-image:hover {
+  transform: scale(1.05);
+}
+
+.planet-image {
+  width: 100%;
+  max-width: 500px; /* mayor tamaño */
+  border: 2px solid var(--starwars-yellow);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--starwars-yellow);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Boton Detalles*/
+.btn-starwars-blue {
+  background: linear-gradient(45deg, #001f4d, #0050ff);
+  color: #ffe81f;
+  font-weight: 700;
+  border: 2px solid #ffe81f;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow:
+    0 0 8px #ffe81f,
+    0 0 15px #ffd700,
+    inset 0 0 10px #ffe81f;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow:
+    0 0 5px #ffe81f,
+    0 0 10px #ffd700;
+}
+
+.btn-starwars-blue:hover {
+  background: linear-gradient(45deg, #003399, #3399ff);
+  box-shadow:
+    0 0 20px #ffe81f,
+    0 0 40px #ffd700,
+    inset 0 0 15px #ffe81f;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: 450px;        
+  object-fit: cover;   
+  border: 2px solid #FFE81F;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #FFE81F;
+  transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+
+
+.starwars-navbar {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 100px; /* espacio para que el logo no tape el texto */
+  background-color: black; /* fallback si la imagen no carga */
+  border-bottom: 2px solid #FFE81F;
+  box-shadow: 0 0 10px #FFE81F;
+}
